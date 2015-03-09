@@ -1,0 +1,24 @@
+2. SQL
+a) What is the relation between Database, Schema, Tables, View in PostgreSQL / MySQL?
+Database is the largest physical container within which all data objects are stored.
+--------                --------
+A Schema is a logical grouping of SQL objects. Each database can have multiple schemas 
+  ------      ----------------
+depending on the applications that use them. Permissions can be specified at schema
+level.
+Table is a physical storage of rows and columns.
+           ----------------
+A view is usually a logical table (sometimes materialised into a physical storage).
+                    -------        ----------------------
+It is specified by a query which can be a join of multiple tables or views. Every
+time a logical view is accessed, its underlying query is also run.
+
+b) What is the difference between a table and a view?
+A table is always stored physically.
+A view is almost like a table, but with the following key differences:
+A view may or may not be materialised.
+A view is a standing query and can be a join on multiple tables. 
+A view is typically used for simplifying complex queries by providing a table-like abstraction
+for intermediate results.
+A view is not suitable for running DML statements unless all fields required to maintain 
+constraints are present.
